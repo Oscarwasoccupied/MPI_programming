@@ -15,3 +15,14 @@ elif (worker == 1):
     x = comm.recv(source=0)
     print("Hello world from process", worker, " of ", size)
     print(x)
+    
+    
+'''
+Rank B must know that it is about to receive a message 
+and acknowledge this by calling MPI_Recv. 
+This sets up a buffer for writing the incoming data 
+and instructs the communication device to listen for the message.
+The message will not actually be sent before the receiving rank calls MPI_Recv, 
+even if MPI_Send has been called.
+
+'''
